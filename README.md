@@ -1,4 +1,6 @@
-# Introduction #
+# Udacity Full Stack Web Developer Nanodegree Long Analysis Project
+
+## Introduction
 
 This project includes a python API-DB call. The filename is called `newsdata.py`
 `newsdata.py` queries a psql database and outputs the answer to the following 3 questions regarding its data:
@@ -7,7 +9,7 @@ This project includes a python API-DB call. The filename is called `newsdata.py`
 * QUESTION 2: Who are the most popular article authors of all time?
 * QUESTION 3: On which days did more than 1 percent of requests lead to errors?
 
-## Program Design ##
+## Program Design
 
 `newdata.py` contains 3 function definitions. Each function comprises of a query to the psql database in order to answer the questions.
 
@@ -35,7 +37,7 @@ SELECT date, substr(percent_errors::text,1,3) AS errors
 FROM percent;
 ```
 
-## Installation ##
+## Installation
 
 To run the program, you'll need database software (provided by a Linux virtual machine) and the data to analyze. You will need to install the virtual machine and download the data as DESCribed in the class [notes](https://classroom.udacity.com/nanodegrees/nd000/parts/b910112d-b5c0-4bfe-adca-6425b137ed12/modules/a3a0987f-fc76-4d14-a759-b2652d06ab2b/lessons/0aa64f0e-30be-455e-a30d-4cae963f75ea/concepts/a9cf98c8-0325-4c68-b972-58d5957f1a91).
 
@@ -44,6 +46,7 @@ Once you have the virtual machine loaded, please load the database by using the 
 `newdata.py` requires 6 views created in the psql database. The create code for the 6 views are as follows:
 
 ##### View 1
+
 This view creates table1 which includes the authors' names and the articles they've written.
 ```
 CREATE VIEW table1 AS
@@ -53,6 +56,7 @@ ORDER BY authors.name);
 ```
 
 ##### View 2
+
 This view creates table2 which includes the article title and the total slug count for each articles FROM joining the articles and log tables.
 ```
 CREATE VIEW table2 AS
@@ -63,6 +67,7 @@ ORDER BY views DESC);
 ```
 
 ##### View 3
+
 This view creates table3 which includes the authors' name FROM table1, the articles' name FROM table2 and the slug(views) count.
 ```
 CREATE VIEW table3 AS
@@ -73,6 +78,7 @@ ORDER BY table1.name);
 ```
 
 ##### View 4
+
 This view creates the table status which includes the date and total status count FROM the database.
 ```
 CREATE VIEW status as
@@ -81,6 +87,7 @@ FROM log GROUP BY date(time));
 ```
 
 ##### View 5
+
 This view creates the table error which includes the date and total error status count FROM the database.
 ```
 CREATE VIEW errors as
@@ -91,6 +98,7 @@ GROUP BY date(time));
 ```
 
 ##### View 6
+
 This view answers question 3 by creating a table percent which includes the date and the percent operation using the total errors FROM the erros table and the total status FROM the status table. The SELECT query in the actual source code simply formats this view to display a shorter result for percent errors.
 
 ```
