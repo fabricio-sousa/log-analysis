@@ -1,6 +1,6 @@
 # Udacity Full Stack Web Developer Nanodegree Long Analysis Project
 
-## Introduction
+## Description
 
 This project includes a python API-DB call. The filename is called `newsdata.py`
 `newsdata.py` queries a psql database and outputs the answer to the following 3 questions regarding its data:
@@ -8,6 +8,10 @@ This project includes a python API-DB call. The filename is called `newsdata.py`
 * QUESTION 1: What are the most popular three articles of all time?
 * QUESTION 2: Who are the most popular article authors of all time?
 * QUESTION 3: On which days did more than 1 percent of requests lead to errors?
+
+## Frameworks, Libraries, and APIs
+
+Python 2.7, PostgreSQL.
 
 ## Program Design
 
@@ -37,7 +41,7 @@ SELECT date, substr(percent_errors::text,1,3) AS errors
 FROM percent;
 ```
 
-## Installation
+## Installation and How To Run
 
 To run the program, you'll need database software (provided by a Linux virtual machine) and the data to analyze. You will need to install the virtual machine and download the data as DESCribed in the class [notes](https://classroom.udacity.com/nanodegrees/nd000/parts/b910112d-b5c0-4bfe-adca-6425b137ed12/modules/a3a0987f-fc76-4d14-a759-b2652d06ab2b/lessons/0aa64f0e-30be-455e-a30d-4cae963f75ea/concepts/a9cf98c8-0325-4c68-b972-58d5957f1a91).
 
