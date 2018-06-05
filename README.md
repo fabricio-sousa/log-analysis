@@ -1,6 +1,6 @@
 # Udacity Full Stack Web Developer Nanodegree | Log Analysis Project
 
-### Developer: Fabricio Sousa
+#### Developer: Fabricio Sousa
 
 ## Description
 
