@@ -1,5 +1,7 @@
 # Udacity Full Stack Web Developer Nanodegree | Log Analysis Project
 
+### Developer: Fabricio Sousa
+
 ## Description
 
 This project includes a python API-DB call. The filename is called `newsdata.py`
